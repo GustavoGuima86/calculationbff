@@ -1,0 +1,3 @@
+helm install test-alb-controller eks/aws-alb-ingress-controller --set clusterName=test --set autoDiscoverAwsVpcID=true --set autoDiscoverAwsRegion=true --set awsRegion=us-west-2 --set rbac.create=true
+
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller --set clusterName=my-cluster -n kube-system --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
