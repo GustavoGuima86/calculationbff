@@ -6,7 +6,6 @@ import com.calculationbff.api.model.CalculationRequest;
 import com.calculationbff.api.model.CalculationResponseFull;
 import com.calculationbff.api.model.PageCalculationResponseFull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,8 +23,8 @@ public class CalculationRestClientImpl implements CalculationRestClient {
     }
 
     @Override
-    public PageCalculationResponseFull getAllSumPaginated(Pageable pageable) {
+    public PageCalculationResponseFull getAllSumPaginated(int page, int size) {
         // you can make more things here, I just create it to experiment Contract, service mesh and other stuff
-        return calculationFeign.getAllSumPaginated(pageable);
+        return calculationFeign.getAllSumPaginated(page, size);
     }
 }
