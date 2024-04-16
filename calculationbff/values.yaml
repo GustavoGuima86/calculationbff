@@ -25,8 +25,12 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}
-podLabels: {}
+podAnnotations:
+  sidecar.istio.io/inject: "true"
+
+podLabels:
+  app: "calculationbff"
+  version: "1.0.0"
 
 podSecurityContext: {}
   # fsGroup: 2000
